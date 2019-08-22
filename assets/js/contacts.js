@@ -21,35 +21,37 @@ function validateForm(selector) {
 validateForm('.js-form .form-field');
 
 var form = document.querySelector('.js-form');
-var formName = '.js-form';
-
-form.addEventListener('submit', function(e){
-    submitForm(e, formName);
-});
-
-function submitForm(e, formName) {
-    e.preventDefault();
-    var name = $(formName + ' .js-field-name').val();
-    var email = $(formName + ' .js-field-email').val();
-    var message = $(formName + ' .js-field-message').val();
-
-    var formData = {
-        name: name,
-        email: email,
-        message: message
-    };
-
-    $.ajax({
-        type: "POST",
-        url: 'mail.php',
-        data: formData,
-        success: function () {
-            console.log('success');
-            //...
-        },
-        error: function () {
-            console.log('error');
-            //...
-        }
+if (form){
+    var formName = '.js-form';
+    
+    form.addEventListener('submit', function(e){
+        submitForm(e, formName);
     });
+    
+    function submitForm(e, formName) {
+        e.preventDefault();
+        var name = $(formName + ' .js-field-name').val();
+        var email = $(formName + ' .js-field-email').val();
+        var message = $(formName + ' .js-field-message').val();
+    
+        var formData = {
+            name: name,
+            email: email,
+            message: message
+        };
+    
+        $.ajax({
+            type: "POST",
+            url: 'mail.php',
+            data: formData,
+            success: function () {
+                console.log('success');
+                //...
+            },
+            error: function () {
+                console.log('error');
+                //...
+            }
+        });
+    }
 }

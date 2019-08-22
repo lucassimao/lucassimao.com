@@ -38,11 +38,16 @@
     }
   }
 
+  .resume-list__block-description{
+    text-align: justify;
+    text-indent: 30px;
+  }
+
   .resume-list__block-title{
     text-transform: uppercase;
     color: $color-accent;
     font-size: $font-size-t5;
-    line-height: $line-height-t5;
+    line-height: $line-height-t4;
     font-family: $font-family-title;
     font-weight: 700;
     padding-bottom: 5px;
@@ -55,4 +60,10 @@
     color: $color-text-additional;
     padding-bottom: 10px;
   }
+
+  .resume-list__block-tech{
+    margin-top: 25px;
+    font-size: $font-size-t5;
+    text-align: justify;
+  }  
 }
