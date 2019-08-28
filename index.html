@@ -82,7 +82,7 @@
           <div class="personal-profile__contacts">
             <dl class="contact-list contact-list__opacity-titles">
               <dt>Age:</dt>
-              <dd>29</dd>
+              <dd id="age-dd"> &nbsp; </dd>
               <dt>Phone:</dt>
               <dd><a href="tel:+5586998182840">+55 (86) 99818-2840</a></dd>
               <dt>Email:</dt>
@@ -98,8 +98,6 @@
             <a href="https://www.instagram.com/lsimaocosta/" target="_blank"><i class="fa fa-instagram"></i></a>
             <a href="skype:lsimaocosta_1?chat" target="_blank"><i class="fa fa-skype"></i></a>
             <a href="https://api.whatsapp.com/send?phone=+5586998182840&text=Hi!" target="_blank"><i class="fa fa-whatsapp"></i></a>
-
-
           </p>
         </div>
       </div>
@@ -652,5 +650,15 @@
   <script src="assets/js/mbclicker.min.js"></script>
   <script src="assets/js/site-btn.js"></script>
   <!-- <script src="assets/js/style-switcher.js"></script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const ageDD = document.getElementById('age-dd');
+        const today = new Date();
+        const diff =  today.getFullYear() - 1990;
+        if (today.getMonth() < 5)
+          diff -= 1;
+        ageDD.innerText = diff;
+    });
+  </script>
 </body>
 </html>
