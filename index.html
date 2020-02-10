@@ -658,7 +658,7 @@
     document.addEventListener('DOMContentLoaded', (event) => {
         const ageDD = document.getElementById('age-dd');
         const today = new Date();
-        const diff =  today.getFullYear() - 1990;
+        let diff =  today.getFullYear() - 1990;
         if (today.getMonth() < 5)
           diff -= 1;
         ageDD.innerText = diff;
