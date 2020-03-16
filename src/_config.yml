@@ -1,0 +1,6 @@
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            cv_file: cv-en-last-update-20-03-14.pdf
