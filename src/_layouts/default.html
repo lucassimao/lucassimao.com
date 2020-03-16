@@ -53,19 +53,19 @@
 					</div><!--//profile-section-->
 					
 					<ul class="navbar-nav flex-column text-left">
-						<li class="nav-item active">
+						<li class="nav-item {% if page.url == '/' %}active{% endif %}" >
 							<a class="nav-link" href="index.html"><i class="fas fa-user fa-fw mr-2"></i>About Me<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if page.url == '/portfolio.html' %}active{% endif %}">
 							<a class="nav-link" href="portfolio.html"><i class="fas fa-laptop-code fa-fw mr-2"></i>Portfolio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{page.cv_file}}"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
+							<a class="nav-link" target="_blank" href="{{page.cv_file}}"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if page.url == '/blog-home.html' %}active{% endif %}"">
 							<a class="nav-link" href="blog-home.html"><i class="fas fa-blog fa-fw mr-2"></i>Blog</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item {% if page.url == '/contact.html' %}active{% endif %}"">
 							<a class="nav-link" href="contact.html"><i class="fas fa-envelope-open-text fa-fw mr-2"></i>Contact</a>
 						</li>
 					</ul>
