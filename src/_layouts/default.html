@@ -70,9 +70,11 @@
 						</li>
 					</ul>
 					
-					<div class="my-2">
-						<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Hire Me</a>
-					</div>
+					{% if page.show_hire_me_button %}
+						<div class="my-2">
+							<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Hire Me</a>
+						</div>
+					{% endif %}
 					
 	
 					<div class="dark-mode-toggle text-center w-100">
