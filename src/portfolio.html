@@ -5,13 +5,15 @@ layout: default
 	<div class="container text-center single-col-max-width">
 		<h2 class="heading">Portfolio</h2>
 		<div class="intro">
-			<p>Welcome to my online portfolio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-				ligula eget dolor. I'm taking on freelance work at the moment. Want some help building your software?
-			</p>
-
+			Welcome to my online portfolio. I'm still working on this page, meanwhile 
+				<a href="contact.html">get in touch</a> if you have any question, please!
 		</div>
-		<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Hire
+
+		{% if page.show_hire_me_button %}
+			<a class="btn btn-primary" href="contact.html" target="_blank"><i class="fas fa-paper-plane mr-2"></i>Hire
 			Me</a>
+		{% endif %}
+
 
 
 	</div>
@@ -29,6 +31,8 @@ layout: default
 			</ul>
 			<!--//filters-->
 		</div>
+
+		{% if page.show_project_cards %}
 
 		<div class="project-cards row isotope">
 			<div class="isotope-item col-md-6 mb-5 mobileapp frontend">
@@ -272,6 +276,7 @@ layout: default
 			<!--//col-->
 		</div>
 		<!--//row-->
+		{% endif %}
 
 	</div>
 </section>

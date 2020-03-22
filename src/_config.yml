@@ -8,4 +8,5 @@ defaults:
             show_testimonials: no
             show_featured_projects: no
             show_blog: no
+            show_project_cards: no
 
