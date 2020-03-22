@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="assets/font-mfizz.css">
+
 <section class="about-me-section p-3 p-lg-5 theme-bg-light">
 	<div class="container">
 		<div class="profile-teaser media flex-column flex-lg-row">
@@ -53,8 +55,8 @@ layout: default
 					<h3 class="item-title">Vanilla JavaScript</h3>
 					<div class="item-desc">
 						I'm skilled in the most recent version of the language ES2019/ES10. Confortable
-						with O.O and functional programming concepts available in the language and
-						experienced with modern browsers' Web APIs. 
+						both the OO and functional programming concepts in the language as well as the
+						modern browsers Web APIs. 
 						</div>
 				</div>
 				<!--//item-inner-->
@@ -65,8 +67,8 @@ layout: default
 					<div class="item-icon"><i class="fab fa-angular mr-2"></i><i class="fab fa-react mr-2"></i></div>
 					<h3 class="item-title">Angular &amp; React</h3>
 					<div class="item-desc"> I've been involved in Angular 5 based projects and most recently I've been
-						writing a lot of React v16+ based frontends using hooks, react-router, redux and graphql apollo client. 
-						I test my components using Jest and React Testing Library. For e2e tests, I'm using Cypress</div>
+						writing a lot of React v16+ based frontends using hooks, react-router, redux, Material-UI, styled-components and graphql. 
+						I test my react components using Jest and React Testing Library. For e2e tests, I'm using Cypress</div>
 				</div>
 				<!--//item-inner-->
 			</div>
@@ -79,7 +81,7 @@ layout: default
 					<div class="item-desc">
 						I have experience writing Node.js v10+ based restful backends using Express.js. Most recently, 
 						I started to write GraphQL based APIs once I realized how easy is to create, integrate and scale
-						through this approach. 
+						using this approach. 
 						</div>
 				</div>
 				<!--//item-inner-->
@@ -88,7 +90,7 @@ layout: default
 
 			<div class="item col-6 col-lg-3">
 				<div class="item-inner">
-					<div class="item-icon"><i class="fab fa-java"></i></div>
+					<div class="item-icon"><i class="fab fa-java mr-4"></i><i style="color: #f00" class="icon-java-duke mr-2"></i><i style="color: #F29111" class="icon-tomcat"></i></div>
 					<h3 class="item-title">Java 8+</h3>
 					<div class="item-desc">
 						For the most part of my carrer, I wrote Java based web applications.
@@ -103,14 +105,37 @@ layout: default
 			<!--//item-->
 			<div class="item col-6 col-lg-3">
 				<div class="item-inner">
-					<div class="item-icon"><i class="fab fa-html5 mr-2"></i><i class="fab fa-css3-alt"></i></div>
-					<h3 class="item-title">HTML &amp; CSS</h3>
-					<div class="item-desc">List skills/technologies here. You can change the icon above to any of the
-						1500+ <a class="theme-link" href="https://fontawesome.com/" target="_blank">FontAwesome 5 free
-							icons</a> available. Aenean commodo ligula eget dolor. </div>
+					<div class="item-icon"><i style="color:  #A91401" class="icon-ruby mr-3"></i><i style="color: #f00" class="icon-ruby-on-rails-alt"></i></div>
+					<h3 class="item-title">Ruby on Rails</h3>
+					<div class="item-desc">
+						I have a good understanding of Ruby (2.5+) syntax and nuances, 
+						solid understanding of object-oriented programming as well as 
+						experience with Ruby on Rails (5+) along with other common libraries and tools such as
+						active record, rubocop, rspec, devise, pundit and sidekiq
+						</div>
 				</div>
 				<!--//item-inner-->
 			</div>
+
+			<div class="item col-6 col-lg-3">
+				<div class="item-inner">
+					<div class="item-icon">
+						<i style="color:  #A91401" class="icon-oracle mr-2"></i>
+						<i style="color: #336791" class="icon-postgres mr-2"></i>
+						<i style="color:  #F29111" class="icon-mysql mr-2"></i>
+						<i style="color:  #4db33d" class="icon-mongodb mr-2"></i>
+						<i style="color:  #D82C20" class="icon-redis"></i>
+					</div>
+					<h3 class="item-title">Oracle, PostgreSQL, MySQL, MongoDB, Redis</h3>
+					<div class="item-desc">
+						I have been fortunated enough to collaborate in several projects that 
+						used different storage engines, ranging from traditional relational databases to 
+						NoSQL ones. I'm proficient in the SQL language as well as the 
+						extensions of each relational database.  
+						</div>
+				</div>
+				<!--//item-inner-->
+			</div>			
 		</div>
 		<!--//row-->
 
@@ -263,6 +288,7 @@ layout: default
 </div>
 {% endif %}
 
+{% if page.show_featured_projects %}
 <section class="featured-section p-3 p-lg-5">
 	<div class="container">
 		<h2 class="section-title font-weight-bold mb-5">Featured Projects</h2>
@@ -395,11 +421,13 @@ layout: default
 	<!--//container-->
 </section>
 <!--//featured-section-->
+{% endif %}
 
 <div class="container">
 	<hr>
 </div>
 
+{% if page.show_blog %}
 <section class="latest-blog-section p-3 p-lg-5">
 	<div class="container">
 		<h2 class="section-title font-weight-bold mb-5">Latest Blog Posts</h2>
@@ -468,6 +496,7 @@ layout: default
 
 </section>
 <!--//latest-blog-section-->
+{% endif %}
 
 <footer class="footer text-center py-4">
 	<small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/" target="_blank">3rd
