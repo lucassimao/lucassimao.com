@@ -9,4 +9,9 @@ defaults:
             show_featured_projects: no
             show_blog: no
             show_project_cards: no
+            my_email: lsimaocosta@gmail.com
+            twitter_profile: https://twitter.com/lsimaocosta
+            linkedin_profile: https://www.linkedin.com/in/lucassimao/
+            github_profile: https://github.com/lucassimao
+            stackoverflow_profile: https://stackoverflow.com/users/102017/lucas
 
