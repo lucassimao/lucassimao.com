@@ -1,21 +1,36 @@
 const sgMail = require('@sendgrid/mail');
 
+exports.handler = async function (event, context) {
 
-exports.handler = async function(event) {
-    if (!process.env.SENDGRID_API_KEY){
+    if (!process.env.SENDGRID_API_KEY) {
         throw 'No SENDGRID_API_KEY env variable found'
     }
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-    const requestBody = JSON.parse(event.body);
-    const { from, text} = requestBody;
+    const { requestContext: { http: { method } } } = event;
 
-    const msg = {
-        to: 'lsimaocosta@gmail.com',
-        subject: 'You got a new message from your site!',
-        from,
-        text
-    };
-      
-    return sgMail.send(msg);
+    if (method == 'POST') {
+        const data = JSON.parse(event.body);
+        const { name, from, text } = data;
+        const msg = {
+            to: 'lsimaocosta@gmail.com',
+            subject: `${name} just sent you a message!`,
+            from,
+            text
+        };
+
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        return new Promise((resolve, reject) => {
+            sgMail.send(msg)
+                .then(resolve)
+                .catch((error) => {
+                    const { message, code, response: { body } } = error
+                    resolve({
+                        "isBase64Encoded": false,
+                        "statusCode": code,
+                        "headers": { "content-type": "application/json" },
+                        "body": JSON.stringify({ message, code, body })
+                    })
+                })
+        })
+    }
 }
