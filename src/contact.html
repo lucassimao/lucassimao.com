@@ -29,6 +29,15 @@ layout: default
 </section>
 <section class="contact-section px-3 py-5 p-md-5">
 	<div class="container">
+		<div id="successAlert" hidden class="text-center alert alert-primary col-lg-8 mx-lg-auto" role="alert">
+			<i class="fas fa-envelope-open"></i> Message sent ! I'll get back to you soon!
+		</div>
+
+		<div id="errorAlert" hidden class="text-center alert alert-danger col-lg-8 mx-lg-auto" role="alert">
+			<i class="fas fa-exclamation-triangle"></i> Ouch! Sorry, we got some problem here! 
+			<a onclick="window.location.reload()" style="color: inherit;text-decoration: underline;" href="#">Try again</a>
+		</div>
+
 		<form id="contact-form" class="contact-form col-lg-8 mx-lg-auto" method="post">
 			<h3 class="text-center mb-3">Get In Touch</h3>
 			<div class="form-row">
@@ -48,7 +57,11 @@ layout: default
 						rows="10" required="" aria-required="true"></textarea>
 				</div>
 				<div class="form-group col-12">
-					<button type="submit" class="btn btn-block btn-primary py-2">Send Now</button>
+					<button id="submitButton" type="submit" class="btn btn-block btn-primary py-2">
+						<span hidden id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+						Send Now
+						<span class="sr-only">Loading...</span>						
+					</button>
 				</div>
 			</div>
 			<!--//form-row-->
@@ -68,15 +81,22 @@ layout: default
 		const form = document.getElementById('contact-form');
 		form.addEventListener('submit',function(event){
 			event.preventDefault();
+			document.getElementById('submitButton').setAttribute('disabled',true)
+			document.getElementById("spinner").removeAttribute("hidden"); 
+
 
 			const data = {};
 			new FormData(form).forEach((value, key) => data[key] = value);
 
 			axios.post('https://smn3gonxk9.execute-api.us-west-2.amazonaws.com/default/send-email', data)
 			.then(function (response) {
+				form.setAttribute('hidden',true)
+				document.getElementById("successAlert").removeAttribute("hidden"); 
 				console.log(response);
 			})
 			.catch(function (error) {
+				form.setAttribute('hidden',true)
+				document.getElementById("errorAlert").removeAttribute("hidden"); 
 				console.error(error);
 			});			
 		})
