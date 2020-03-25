@@ -1,0 +1,4 @@
+node_modules/
+sendgrid.env
+.jekyll-cache/*
+src/*
