@@ -8,6 +8,28 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Lucas Simão's blog and portfolio">
+
+	<!-- Search Engine -->
+	<meta name="image" content="https://www.lucassimao.com/assets/images/profile-lg.jpg">
+	<!-- Schema.org for Google -->
+	<meta itemprop="name" content="Lucas Simão">
+	<meta itemprop="description" content="Lucas Simão's blog and portfolio">
+	<meta itemprop="image" content="https://www.lucassimao.com/assets/images/profile-lg.jpg">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Lucas Simão">
+	<meta name="twitter:description" content="Lucas Simão's blog and portfolio">
+	<meta name="twitter:site" content="@lsimaocosta">
+	<meta name="twitter:creator" content="@lsimaocosta">
+	<meta name="twitter:image:src" content="https://www.lucassimao.com/assets/images/profile-lg.jpg">
+	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+	<meta name="og:title" content="Lucas Simão">
+	<meta name="og:description" content="Lucas Simão's blog and portfolio">
+	<meta name="og:image" content="https://www.lucassimao.com/assets/images/profile-lg.jpg">
+	<meta name="og:url" content="https://www.lucassimao.com">
+	<meta name="og:site_name" content="Lucas Simão">
+	<meta name="og:type" content="website">
+
 	
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
@@ -28,7 +50,7 @@
 	
 	<header class="header text-center">	    
 		<div class="force-overflow">
-			<h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Lucas Simão</a></h1>
+			<h1 class="blog-name pt-lg-4 mb-0"><a href="/index.html">Lucas Simão</a></h1>
 			
 			<nav class="navbar navbar-expand-lg navbar-dark" >
 				
@@ -38,9 +60,11 @@
 				
 				<div id="navigation" class="collapse navbar-collapse flex-column" >
 					<div class="profile-section pt-3 pt-lg-0">
-						<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile2.png" alt="image" >			
+						<a href="/index.html">
+							<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile2.png" alt="Lucas Simão image" >			
+						</a>
 						
-						<div class="bio mb-3">Hi, my name is Lucas Simão and I'm a brazilian full stack software engineer!</div><!--//bio-->
+						<div class="bio mb-3">Hi, my name is Lucas Simão and I'm a full stack software engineer!</div><!--//bio-->
 						<ul class="social-list list-inline py-2 mx-auto">
 							<li class="list-inline-item"><a target="_blank" href="https://twitter.com/lsimaocosta"><i class="fab fa-twitter fa-fw"></i></a></li>
 							<li class="list-inline-item"><a target="_blank" href="https://www.linkedin.com/in/lucassimao/"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
@@ -102,11 +126,11 @@
 					software engineering.
 					I'm a fast learner, hard worker and team player who is proficient in an array of backend and
 					frontend languages and tools.
-					I write about software development on <a class="link-on-bg" href="blog-home.html">my blog</a>.
+					<!-- I write about software development on <a class="link-on-bg" href="blog-home.html">my blog</a>. -->
 				</div>
 				<!--//bio-->
 				<div class="mb-4">
-					<a class="btn btn-primary mr-2 mb-3" target="_blank" href="portfolio.html"><i
+					<a class="btn btn-primary mr-2 mb-3" href="portfolio.html"><i
 							class="fas fa-arrow-alt-circle-right mr-2"></i><span class="d-none d-md-inline">View</span>
 						Portfolio</a>
 					<a class="btn btn-secondary mb-3" target="_blank" href="/cv-en-last-update-20-03-14.pdf"><i
@@ -125,12 +149,12 @@
 		<h2 class="section-title font-weight-bold mb-3">What I do</h2>
 		<div class="section-intro mb-5">
 			I have more than 10 years' experience building software for clients.
-			I started my carrer creating desktop applications and turned to the web platform as the demand for scalable,
+			I started my carrer creating desktop applications and turned my attention to the web platform as the demand for scalable,
 			robust and distribuited solutions increased. All this years of work were
 			accomplished honoring communication, honesty, engineering excelence and commitment as core values.
 			Below is a quick overview of my main technical skill sets and technologies I use.
 			Want to find out more about my experience?
-			Check out my <a target="_blank" href="/cv-en-last-update-20-03-14.pdf"> resume</a> and <a target="_blank" href="portfolio.html">project portfolio</a>.
+			Check out my <a target="_blank" href="/cv-en-last-update-20-03-14.pdf"> resume</a> and <a href="portfolio.html">project portfolio</a>.
 		</div>
 
 		<div class="row">
@@ -139,8 +163,8 @@
 					<div class="item-icon"><i class="fab fa-js-square"></i></div>
 					<h3 class="item-title">Vanilla JavaScript</h3>
 					<div class="item-desc">
-						I'm skilled in the most recent version of the language ES2019/ES10. Confortable
-						both the OO and functional programming concepts in the language as well as the
+						I'm skilled in the most recent version of the language ES2019/ES10. Comfortable
+						both in the OO and functional programming concepts in the language as well as the
 						modern browsers Web APIs. 
 						</div>
 				</div>
@@ -179,10 +203,10 @@
 					<h3 class="item-title">Java 8+</h3>
 					<div class="item-desc">
 						For the most part of my carrer, I wrote Java based web applications.
-						I started writing JSF webapps and turned into Spring Boot to create restful
+						I started writing JSF webapps and in the last projects I used Spring Boot to create restful
 						backends. I'm also experienced with several de facto standard libraries like 
-						JUnit, Mockito, Hibernate/JPA, JAX-RS, CDI and EJB. I'm completelly confortable with new the stream, 
-						time, concurrency, I/O APIs as well as the new language constructs and improvements (module system, lambda expressions ...).
+						JUnit, Mockito, Hibernate/JPA, JAX-RS, CDI and EJB. I'm completelly comfortable with the new stream, 
+						time, concurrency, I/O APIs as well as new language constructs and improvements (module system, lambda expressions ...).
 						</div>
 				</div>
 				<!--//item-inner-->
@@ -216,7 +240,7 @@
 						I have been fortunated enough to collaborate in several projects that 
 						used different storage engines, ranging from traditional relational databases to 
 						NoSQL ones. I'm proficient in the SQL language as well as the 
-						extensions of each relational database.  
+						extensions of each relational/NoSQL database.  
 						</div>
 				</div>
 				<!--//item-inner-->
