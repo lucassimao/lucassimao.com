@@ -114,6 +114,7 @@
 	
 	<div class="main-wrapper">
 		<link rel="stylesheet" href="assets/font-mfizz.css">
+<link rel="stylesheet" href="assets/css/custom.css">
 
 <section class="about-me-section p-3 p-lg-5 theme-bg-light">
 	<div class="container">
@@ -122,13 +123,8 @@
 			<div class="media-body">
 				<h2 class="name font-weight-bold mb-1">Lucas Simão</h2>
 				<div class="tagline mb-3">Full Stack Software Engineer</div>
-				<div class="bio mb-4">
-					I'm a software engineer specialised in frontend and backend development for complex scalable web
-					apps.
-					I'm skilled at writing well-designed, testable and efficient code using the best practices in
-					software engineering.
-					I'm a fast learner, hard worker and team player who is proficient in an array of backend and
-					frontend languages and tools.
+				<div class="bio mb-4 text-justify">
+					I'm a software engineer specialized in frontend and backend development for complex scalable web apps. I'm skilled at writing well-designed, testable, and efficient code using the best practices in software engineering. I'm a fast learner, hard worker, and team player who is proficient in an array of backend and frontend languages and tools.
 					<!-- I write about software development on <a class="link-on-bg" href="blog-home.html">my blog</a>. -->
 				</div>
 				<!--//bio-->
@@ -142,8 +138,8 @@
 			</div>
 			<!--//media-body-->
 			​<picture class="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0">
-				<source srcset="assets/images/profile-img400x600.webp" type="image/webp">
-				<img loading="lazy" src="assets/images/profile-img400x600.jpg" alt="Lucas Simão profile image">
+				<source style="max-width: 100%;" srcset="assets/images/profile-img400x600.webp" type="image/webp">
+				<img loading="lazy" style="max-width: 100%;" src="assets/images/profile-img400x600.jpg" alt="Lucas Simão profile image">
 			</picture>				
 		</div>
 	</div>
@@ -153,86 +149,69 @@
 <section class="overview-section p-3 p-lg-5">
 	<div class="container">
 		<h2 class="section-title font-weight-bold mb-3">What I do</h2>
-		<div class="section-intro mb-5">
-			I have more than 10 years' experience building software for clients.
-			I started my carrer creating desktop applications and turned my attention to the web platform as the demand for scalable,
-			robust and distribuited solutions increased. All this years of work were
-			accomplished honoring communication, honesty, engineering excelence and commitment as core values.
-			Below is a quick overview of my main technical skill sets and technologies I use.
-			Want to find out more about my experience?
+		<div class="section-intro mb-5 text-justify text-indented">
+			I have more than 10 years' experience building software for clients. I started my career creating desktop applications and turned my attention to the web platform as the demand for scalable, robust, and distributed solutions increased. All these years of work were accomplished honoring communication, honesty, engineering, excellence, and commitment as core values. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience?
 			Check out my <a target="_blank" href="/cv-en-last-update-20-03-14.pdf"> resume</a> and <a href="portfolio.html">project portfolio</a>.
 		</div>
 
 		<div class="row">
-			<div class="item col-6 col-lg-3">
+			<div class="item col-12 col-md-6 col-lg-4">
 				<div class="item-inner">
 					<div class="item-icon"><i class="fab fa-js-square"></i></div>
 					<h3 class="item-title">Vanilla JavaScript</h3>
-					<div class="item-desc">
+					<div class="item-desc text-justify text-indented">
 						I'm skilled in the most recent version of the language ES2019/ES10. Comfortable
-						both in the OO and functional programming concepts in the language as well as the
+						both with OO and functional programming concepts in the language as well as the
 						modern browsers Web APIs. 
 						</div>
 				</div>
 				<!--//item-inner-->
 			</div>
 			<!--//item-->
-			<div class="item col-6 col-lg-3">
+			<div class="item col-12 col-md-6 col-lg-4">
 				<div class="item-inner">
 					<div class="item-icon"><i class="fab fa-angular mr-2"></i><i class="fab fa-react mr-2"></i></div>
 					<h3 class="item-title">Angular &amp; React</h3>
-					<div class="item-desc"> I've been involved in Angular 5 based projects and most recently I've been
-						writing a lot of React v16+ based frontends using hooks, react-router, redux, Material-UI, styled-components and graphql. 
-						I test my react components using Jest and React Testing Library. For e2e tests, I'm using Cypress</div>
+					<div class="item-desc text-justify text-indented">
+						I worked in Angular5 based projects in the past and nowadays I'm writing a lot of React v16+ based frontends
+						using TypeScript, hooks, react-router, Redux, Material-UI, Ant Design, Styled-components, and Graphql. 
+						I test my React components using Jest and React Testing Library.
+						For e2e tests, I'm using Cypress</div>
 				</div>
 				<!--//item-inner-->
 			</div>
 			<!--//item-->
 
-			<div class="item col-6 col-lg-3">
+			<div class="item col-12 col-md-6 col-lg-4">
 				<div class="item-inner">
 					<div class="item-icon"><i class="fab fa-node-js"></i></div>
 					<h3 class="item-title">Node.js</h3>
-					<div class="item-desc">
-						I have experience writing Node.js v10+ based restful backends using Express.js. Most recently, 
-						I started to write GraphQL based APIs once I realized how easy is to create, integrate and scale
-						using this approach. 
+					<div class="item-desc text-justify text-indented">
+						I have experience writing Node.js v10+ based restful backends using Express.js and NestJS.
+						Most recently, I started writing GraphQL APIs once I realized how easy is to create, integrate, document, and scale services using this approach. 
 						</div>
 				</div>
 				<!--//item-inner-->
 			</div>
 			<!--//item-->
 
-			<div class="item col-6 col-lg-3">
+			<div class="item col-12 col-md-6 col-lg-4">
 				<div class="item-inner">
-					<div class="item-icon"><i class="fab fa-java mr-4"></i><i style="color: #f00" class="icon-java-duke mr-2"></i><i style="color: #F29111" class="icon-tomcat"></i></div>
+					<div class="item-icon"><i class="fab fa-java mr-4"></i>
+						<i style="color: #f00" class="icon-java-duke mr-2"></i>
+						<i style="color: #0f0" class="icon-spring mr-2"></i>
+						<i style="color: #F29111" class="icon-tomcat"></i></div>
 					<h3 class="item-title">Java 8+</h3>
-					<div class="item-desc">
-						For the most part of my carrer, I wrote Java based web applications.
-						I started writing JSF webapps and in the last projects I used Spring Boot to create restful
-						backends. I'm also experienced with several de facto standard libraries like 
-						JUnit, Mockito, Hibernate/JPA, JAX-RS, CDI and EJB. I'm completelly comfortable with the new stream, 
-						time, concurrency, I/O APIs as well as new language constructs and improvements (module system, lambda expressions ...).
+					<div class="item-desc text-justify text-indented">
+						For most of my career, I used Java as my go-to tech stack.  I started writing JSF web apps, afterward developing Spring framework based web apps and in the last projects, I used Spring Boot to create restful microservices. I'm also experienced with several de facto standard libraries like JUnit, Mockito, Hibernate/JPA, JAX-RS, CDI, and EJB. Also, I'm completely comfortable with the new stream, time, concurrency, I/O APIs as well as new language constructs and improvements
+						(module system, lambda expressions ...).
 						</div>
 				</div>
 				<!--//item-inner-->
 			</div>
 			<!--//item-->
-			<div class="item col-6 col-lg-3">
-				<div class="item-inner">
-					<div class="item-icon"><i style="color:  #A91401" class="icon-ruby mr-3"></i><i style="color: #f00" class="icon-ruby-on-rails-alt"></i></div>
-					<h3 class="item-title">Ruby on Rails</h3>
-					<div class="item-desc">
-						I have a good understanding of Ruby (2.5+) syntax and nuances, 
-						solid understanding of object-oriented programming as well as 
-						experience with Ruby on Rails (5+) along with other common libraries and tools such as
-						active record, rubocop, rspec, devise, pundit and sidekiq
-						</div>
-				</div>
-				<!--//item-inner-->
-			</div>
 
-			<div class="item col-6 col-lg-3">
+			<div class="item col-12 col-md-6 col-lg-4">
 				<div class="item-inner">
 					<div class="item-icon">
 						<i style="color:  #A91401" class="icon-oracle mr-2"></i>
@@ -242,15 +221,36 @@
 						<i style="color:  #D82C20" class="icon-redis"></i>
 					</div>
 					<h3 class="item-title">Oracle, PostgreSQL, MySQL, MongoDB, Redis</h3>
-					<div class="item-desc">
-						I have been fortunated enough to collaborate in several projects that 
+					<div class="item-desc text-justify text-indented">
+						I have been fortunate enough to collaborate in several projects that 
 						used different storage engines, ranging from traditional relational databases to 
 						NoSQL ones. I'm proficient in the SQL language as well as the 
 						extensions of each relational/NoSQL database.  
 						</div>
 				</div>
 				<!--//item-inner-->
-			</div>			
+			</div>		
+			
+			<div class="item col-12 col-md-6 col-lg-4">
+				<div class="item-inner">
+					<div class="item-icon">
+						<i style="color:  #7673C0" title="Heroku" class="icon-heroku mr-1"></i>
+						<i style="color:  #000" title="Aws" class="fab fa-aws mr-1"></i>
+						<img src="assets/images/gcp.svg" style="max-height: 30px;" title="Google cloud platform" alt="GCP">
+						<i style="color:  #000" title="Github" class="fab fa-github mr-1"></i>
+						<i style="color:  #000" title="Linux" class="fab fa-linux mr-1"></i>
+						<i style="color:  #48728b" title="Jenkins" class="fab fa-jenkins mr-1"></i>
+						<i style="color:  #0db7ed" title="Docker" class="fab fa-docker mr-1" style="color:  #00f"></i>
+
+					</div>
+					<h3 class="item-title">Devops, CI/CD, Cloud computing platforms</h3>
+					<div class="item-desc text-justify text-indented">
+						I have experience with a myriad of software development tools, environments, and operations which aim to shorten the systems development life cycle providing continuous delivery of high-quality software.
+						</div>
+				</div>
+				<!--//item-inner-->
+			</div>
+
 		</div>
 		<!--//row-->
 
