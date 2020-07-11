@@ -3,7 +3,7 @@ defaults:
         scope:
             path: ""
         values:
-            cv_file: cv-en-last-update-20-03-14.pdf
+            cv_file: cv-en-last-update-2020-July-11.pdf
             show_hire_me_button: no
             show_testimonials: no
             show_featured_projects: no
