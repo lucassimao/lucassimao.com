@@ -5,13 +5,13 @@ export function Hero() {
     <section className="mb-16">
       <div className="container">
         <h1 className="text-4xl md:text-5xl font-bold mb-8 lowercase">
-          lucas simão
+          Hi,
         </h1>
         
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="space-y-3">
             <p className="text-foreground-secondary">
-              Full-stack engineer who thinks PostgreSQL is a personality trait and 
+              I am a full-stack engineer who thinks PostgreSQL is a personality trait and 
               believes the best code is the one you don&apos;t have to write twice.
             </p>
             
