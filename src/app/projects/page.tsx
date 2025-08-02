@@ -23,7 +23,6 @@ const projects: Project[] = [
     description: "AI-powered vocabulary learning mobile app that combines advanced artificial intelligence with the scientifically-proven Leitner spaced repetition system. Features AI-generated definitions, images, and audio across 7 languages, with 8 interactive quiz modes and comprehensive analytics.",
     technologies: ["Go", "React Native", "Next.js", "PostgreSQL", "OpenAI API", "Stripe", "RevenueCat", "Redis", "Docker"],
     link: "https://decorebator.com",
-    github: "https://github.com/lucassimao/decorebator-v2",
     playStore: "https://play.google.com/store/apps/details?id=com.lsimaocosta.decorebator",
     appStore: "#", // Placeholder for now
     icon: "/decorebator-icon.png",
