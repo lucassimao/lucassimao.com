@@ -72,7 +72,7 @@ export default function AboutPage() {
           <div className="space-y-6">
             <div className="border-l-4 border-color pl-6">
               <h3 className="font-bold text-foreground">
-                Senior Software Engineer - <a href="https://bold.org" target="_blank" rel="noopener noreferrer" className="text-link hover:underline">Bold.org</a>
+                Staff Software Engineer - <a href="https://bold.org" target="_blank" rel="noopener noreferrer" className="text-link hover:underline">Bold.org</a>
               </h3>
               <p className="text-sm text-muted mb-2">March 2021 - Present</p>
               <p className="text-foreground-secondary">
