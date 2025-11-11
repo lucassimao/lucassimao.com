@@ -1,6 +1,11 @@
+"use client"
+
 import { ThemeToggle } from '../theme/ThemeToggle'
+import { LanguageToggle } from '../language/LanguageToggle'
+import { useTranslations } from '../language/LanguageProvider'
 
 export function Footer() {
+  const t = useTranslations()
   const socialLinks = [
     { href: 'https://github.com/lucassimao', label: 'github', icon: 'github' },
     { href: 'https://x.com/lsimaocosta', label: 'twitter', icon: 'twitter' },
@@ -60,15 +65,18 @@ export function Footer() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted">theme</span>
-            <ThemeToggle variant="edd" />
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <LanguageToggle />
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted">{t.preferences.theme}</span>
+              <ThemeToggle variant="ashley" />
+            </div>
           </div>
         </div>
 
         <div className="mt-8 pt-6 border-t border-color text-center">
           <p className="text-sm text-muted">
-            © {new Date().getFullYear()} Lucas Simão. Built with Next.js, Tailwind CSS, and Claude Code.
+            © {new Date().getFullYear()} {t.footer.builtWith}
           </p>
         </div>
       </div>

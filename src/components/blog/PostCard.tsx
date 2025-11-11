@@ -1,5 +1,8 @@
+"use client"
+
 import Link from 'next/link'
 import { TagList } from './TagList'
+import { useLanguage } from '@/components/language/LanguageProvider'
 
 interface PostCardProps {
   title: string
@@ -11,13 +14,15 @@ interface PostCardProps {
 }
 
 export function PostCard({ title, excerpt, date, slug, tags = [], featured = false }: PostCardProps) {
+  const { language } = useLanguage()
+
   if (featured) {
     // Edd style: Featured post with rounded corners and shadow
     return (
       <article className="bg-card rounded-lg p-6 shadow-card hover:shadow-lg transition-shadow duration-200">
         <Link href={`/blog/${slug}`} className="block group">
           <time className="text-sm text-muted mb-2 block">
-            {new Date(date).toLocaleDateString('en-US', {
+            {new Date(date).toLocaleDateString(language, {
               year: 'numeric',
               month: 'long',
               day: 'numeric'
@@ -55,7 +60,7 @@ export function PostCard({ title, excerpt, date, slug, tags = [], featured = fal
           </div>
           
           <time className="text-sm text-muted flex-shrink-0">
-            {new Date(date).toLocaleDateString('en-US', {
+            {new Date(date).toLocaleDateString(language, {
               month: 'short',
               day: 'numeric',
               year: 'numeric'

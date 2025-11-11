@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllPosts } from '@/lib/posts'
-import { TagList } from '@/components/blog/TagList'
+import { BlogPostHeader } from '@/components/blog/BlogPostHeader'
+import { BlogPostFooter } from '@/components/blog/BlogPostFooter'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -71,47 +71,18 @@ export default async function BlogPost({ params }: Props) {
   return (
     <div className="container">
       <article className="max-w-none">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-          
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted mb-6">
-            <time>
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-            <span>•</span>
-            <span>{post.readingTime}</span>
-          </div>
-          
-          {post.tags.length > 0 && (
-            <TagList tags={post.tags} variant="ashley" />
-          )}
-        </header>
+        <BlogPostHeader
+          title={post.title}
+          date={post.date}
+          readingTime={post.readingTime}
+          tags={post.tags}
+        />
 
         <div className="prose prose-lg max-w-none">
           <MDXRemote source={post.content} components={mdxComponents} />
         </div>
 
-        <footer className="mt-12 pt-8 border-t border-color">
-          <div className="flex items-center justify-between">
-            <Link
-              href="/blog"
-              className="text-link hover:underline flex items-center gap-2"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-              </svg>
-              Back to all posts
-            </Link>
-            
-            <div className="text-sm text-muted">
-              Share this post
-            </div>
-          </div>
-        </footer>
+        <BlogPostFooter />
       </article>
     </div>
   )

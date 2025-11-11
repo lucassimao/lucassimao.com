@@ -1,3 +1,5 @@
+"use client"
+
 interface TagListProps {
   tags: string[]
   variant?: 'ashley' | 'edd'

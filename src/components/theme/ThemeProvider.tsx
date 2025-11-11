@@ -13,8 +13,8 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
-  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark')
+  const [theme, setTheme] = useState<Theme>('light')
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     // Load theme from localStorage
@@ -22,15 +22,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (stored) {
       setTheme(stored)
     } else {
-      // If no stored theme, default to dark
-      localStorage.setItem('theme', 'dark')
+      // If no stored theme, default to light
+      localStorage.setItem('theme', 'light')
     }
   }, [])
 
   useEffect(() => {
     const root = document.documentElement
     const updateTheme = () => {
-      let resolved: 'light' | 'dark' = 'dark'
+      let resolved: 'light' | 'dark' = 'light'
       
       if (theme === 'system') {
         resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'

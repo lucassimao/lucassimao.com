@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { LanguageProvider } from "@/components/language/LanguageProvider";
+import { getServerLanguage } from "@/lib/server-language";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,21 +34,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const language = await getServerLanguage()
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={language} data-theme="light" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider>
-          <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <LanguageProvider initialLanguage={language}>
+          <ThemeProvider>
+            <Header />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
