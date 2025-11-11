@@ -340,7 +340,7 @@ const translations = {
   },
 } as const
 
-export type Translations = typeof translations.en
+export type Translations = (typeof translations)[Language]
 
 export function getDictionary(language: Language = DEFAULT_LANGUAGE): Translations {
   return translations[language] ?? translations[DEFAULT_LANGUAGE]

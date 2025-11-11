@@ -44,30 +44,33 @@ export function AboutContent() {
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-6">{about.experienceHeading}</h2>
           <div className="space-y-6">
-            {about.experiences.map((experience) => (
-              <div key={experience.role + experience.company} className="border-l-4 border-color pl-6">
-                <h3 className="font-bold text-foreground">
-                  {experience.role}
-                  {experience.companyUrl ? (
-                    <>
-                      {' - '}
-                      <a
-                        href={experience.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-link hover:underline"
-                      >
-                        {experience.company}
-                      </a>
-                    </>
-                  ) : (
-                    <> - {experience.company}</>
-                  )}
-                </h3>
+            {about.experiences.map((experience) => {
+              const hasCompanyUrl = 'companyUrl' in experience && Boolean(experience.companyUrl)
+              return (
+                <div key={experience.role + experience.company} className="border-l-4 border-color pl-6">
+                  <h3 className="font-bold text-foreground">
+                    {experience.role}
+                    {hasCompanyUrl ? (
+                      <>
+                        {' - '}
+                        <a
+                          href={experience.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-link hover:underline"
+                        >
+                          {experience.company}
+                        </a>
+                      </>
+                    ) : (
+                      <> - {experience.company}</>
+                    )}
+                  </h3>
                 <p className="text-sm text-muted mb-2">{experience.timeline}</p>
                 <p className="text-foreground-secondary">{experience.description}</p>
-              </div>
-            ))}
+                </div>
+              )
+            })}
           </div>
         </div>
 
