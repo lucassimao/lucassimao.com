@@ -20,6 +20,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Load theme from localStorage
     const stored = localStorage.getItem('theme') as Theme
     if (stored) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(stored)
     } else {
       // If no stored theme, default to light

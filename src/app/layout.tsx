@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LanguageProvider } from "@/components/language/LanguageProvider";
 import { getServerLanguage } from "@/lib/server-language";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default async function RootLayout({
               {children}
             </main>
             <Footer />
+            <Analytics />
           </ThemeProvider>
         </LanguageProvider>
       </body>

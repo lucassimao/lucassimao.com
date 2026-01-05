@@ -80,6 +80,7 @@ export function LanguageProvider({
     try {
       const stored = localStorage.getItem('language')
       if (isLanguage(stored)) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         applyLanguage(stored)
         return
       }
@@ -90,6 +91,7 @@ export function LanguageProvider({
     if (!hasLanguageCookie()) {
       const browserLanguage = detectBrowserLanguage()
       if (browserLanguage) {
+         
         applyLanguage(browserLanguage)
       }
     }
