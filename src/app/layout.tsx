@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { LanguageProvider } from "@/components/language/LanguageProvider";
 import { getServerLanguage } from "@/lib/server-language";
 import { Analytics } from "@vercel/analytics/react";
+import { SITE_URL, personJsonLd } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,25 +15,81 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lucas Simão - Solo Developer",
-  description: "Solo developer crafting thoughtful solutions and sharing ideas through code. Building web applications with React, Next.js, and TypeScript.",
-  keywords: ["developer", "React", "Next.js", "TypeScript", "web development"],
-  authors: [{ name: "Lucas Simão" }],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Lucas Simão — Staff Software Engineer (Remote, Brazil)",
+    template: "%s · Lucas Simão",
+  },
+  description:
+    "Staff Software Engineer with 10+ years building large-scale web and mobile products. Hands-on across React, Next.js, React Native, Node.js, Go, and PostgreSQL. Based in Brazil, working remotely with teams worldwide.",
+  applicationName: "Lucas Simão",
+  authors: [{ name: "Lucas Simão", url: SITE_URL }],
   creator: "Lucas Simão",
+  publisher: "Lucas Simão",
+  keywords: [
+    "Lucas Simão",
+    "Staff Software Engineer",
+    "Senior Software Engineer",
+    "Full-stack engineer",
+    "Remote software engineer",
+    "Brazil software engineer",
+    "Teresina",
+    "React",
+    "Next.js",
+    "React Native",
+    "Expo",
+    "TypeScript",
+    "Node.js",
+    "Go",
+    "PostgreSQL",
+    "AWS",
+    "Cloudflare Workers",
+    "AI engineering",
+    "LLM",
+    "Bold.org",
+    "open to opportunities",
+    "hiring",
+  ],
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      "pt-BR": "/",
+    },
+  },
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: "en_US",
-    url: "https://lucassimao.com",
-    title: "Lucas Simão - Solo Developer",
-    description: "Solo developer crafting thoughtful solutions and sharing ideas through code.",
+    alternateLocale: ["pt_BR"],
+    url: SITE_URL,
     siteName: "Lucas Simão",
+    title: "Lucas Simão — Staff Software Engineer (Remote, Brazil)",
+    description:
+      "Full-stack engineer with 10+ years building large-scale web and mobile products. React, Next.js, React Native, Go, PostgreSQL. Currently at Bold.org.",
+    firstName: "Lucas",
+    lastName: "Simão",
+    username: "lsimaocosta",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lucas Simão - Solo Developer",
-    description: "Solo developer crafting thoughtful solutions and sharing ideas through code.",
+    title: "Lucas Simão — Staff Software Engineer",
+    description:
+      "Full-stack engineer with 10+ years shipping web and mobile products. React, Next.js, React Native, Go.",
     creator: "@lsimaocosta",
+    site: "@lsimaocosta",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  category: "technology",
 };
 
 export default async function RootLayout({
@@ -40,17 +97,21 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const language = await getServerLanguage()
+  const language = await getServerLanguage();
 
   return (
     <html lang={language} data-theme="light" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className={inter.className}>
         <LanguageProvider initialLanguage={language}>
           <ThemeProvider>
             <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
+            <main>{children}</main>
             <Footer />
             <Analytics />
           </ThemeProvider>

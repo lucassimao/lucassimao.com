@@ -23,18 +23,18 @@ export function LanguageToggle({ className = '' }: Props) {
   }
 
   return (
-    <div className={`flex flex-col gap-1 text-xs uppercase tracking-wide text-muted ${className}`}>
+    <div className={`text-xs uppercase tracking-wide ${className}`}>
       <span className="sr-only">{t.preferences.language}</span>
-      <div className="inline-flex rounded-full border border-color overflow-hidden">
+      <div className="inline-flex rounded-full border border-border/70 overflow-hidden">
         {OPTIONS.map((option) => (
           <button
             key={option.value}
             type="button"
             onClick={() => handleChange(option.value)}
-            className={`px-3 py-1 font-semibold transition-colors ${
+            className={`px-2.5 py-1 font-semibold transition-colors ${
               option.value === language
                 ? 'bg-foreground text-background'
-                : 'text-foreground hover:bg-background-secondary'
+                : 'text-foreground-secondary hover:text-foreground'
             }`}
           >
             {option.label}
