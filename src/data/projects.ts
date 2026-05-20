@@ -68,8 +68,8 @@ export const projects: Project[] = [
       'pt-BR': 'App mobile focado no mercado brasileiro para tabelas de amortização — compare os sistemas Price e SAC, exporte cronogramas e simule cenários offline.',
     },
     technologies: ['Expo', 'React Native', 'Next.js', 'TypeScript', 'EAS'],
-    link: 'https://calculadorapricesac.com',
-    playStore: 'https://play.google.com/store/apps/details?id=com.lsimaocosta.calculadorapricesac',
+    link: 'https://www.calculadorapricesac.com.br/',
+    appStore: 'https://apps.apple.com/app/calculadora-sac-price/id6757717537',
     status: 'completed',
     stack: [
       { label: 'Mobile', value: 'Expo 54, React Native, Expo Router, expo-iap, Sentry' },
