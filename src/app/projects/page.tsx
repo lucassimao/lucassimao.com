@@ -6,7 +6,7 @@ import { projectsListJsonLd } from '@/lib/seo'
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Projects by Lucas Simão — DriftPosts (AI travel content), Decorebator (vocabulary app), Calculadora Price & SAC, Aluga, and more. Built with React, Next.js, React Native, Go, and Cloudflare.',
+    'Projects by Lucas Simão — Decorebator MCP, a vocabulary tutor in development for ChatGPT; DriftPosts, an AI travel platform; and the retired Decorebator app.',
   alternates: { canonical: '/projects' },
   openGraph: {
     title: 'Projects · Lucas Simão',
@@ -22,7 +22,7 @@ const jsonLdString = JSON.stringify(
     projects.map((p) => ({
       name: p.title,
       description: p.description.en,
-      url: p.link,
+      url: p.link ?? p.github,
     }))
   )
 )

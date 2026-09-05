@@ -23,7 +23,7 @@ export function LanguageToggle({ className = '' }: Props) {
   }
 
   return (
-    <div className={`text-xs uppercase tracking-wide ${className}`}>
+    <div className={`text-xs uppercase tracking-wide ${className}`} role="group" aria-label={t.preferences.language}>
       <span className="sr-only">{t.preferences.language}</span>
       <div className="inline-flex rounded-full border border-border/70 overflow-hidden">
         {OPTIONS.map((option) => (
@@ -31,7 +31,8 @@ export function LanguageToggle({ className = '' }: Props) {
             key={option.value}
             type="button"
             onClick={() => handleChange(option.value)}
-            className={`px-2.5 py-1 font-semibold transition-colors ${
+            aria-pressed={option.value === language}
+            className={`min-h-10 min-w-10 px-2.5 py-1 font-semibold transition-colors ${
               option.value === language
                 ? 'bg-foreground text-background'
                 : 'text-foreground-secondary hover:text-foreground'

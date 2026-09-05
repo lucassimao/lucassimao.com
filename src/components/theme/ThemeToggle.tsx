@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from '@/components/language/LanguageProvider'
 import { useTheme } from './ThemeProvider'
 
 interface ThemeToggleProps {
@@ -7,6 +8,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ variant = 'ashley' }: ThemeToggleProps) {
+  const { preferences } = useTranslations()
   const { theme, setTheme, resolvedTheme } = useTheme()
 
   const toggleTheme = () => {
@@ -21,8 +23,9 @@ export function ThemeToggle({ variant = 'ashley' }: ThemeToggleProps) {
     return (
       <button
         onClick={toggleTheme}
-        className="p-2 rounded-full hover:bg-background-secondary transition-colors duration-200"
-        aria-label="Toggle theme"
+        className="min-h-10 min-w-10 flex items-center justify-center p-2 rounded-full hover:bg-background-secondary transition-colors duration-200"
+        aria-label={preferences.theme}
+        aria-pressed={resolvedTheme === 'dark'}
       >
         {/* Sun icon for light mode */}
         {resolvedTheme === 'light' ? (
@@ -45,7 +48,8 @@ export function ThemeToggle({ variant = 'ashley' }: ThemeToggleProps) {
     <button
       onClick={toggleTheme}
       className="relative inline-flex h-6 w-11 items-center rounded-full bg-muted transition-colors duration-200 hover:bg-foreground-secondary"
-      aria-label="Toggle theme"
+      aria-label={preferences.theme}
+        aria-pressed={resolvedTheme === 'dark'}
     >
       <span
         className={`inline-block h-4 w-4 transform rounded-full bg-foreground transition-transform duration-200 ${

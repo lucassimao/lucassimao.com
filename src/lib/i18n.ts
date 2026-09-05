@@ -7,7 +7,9 @@ const translations = {
   en: {
     preferences: {
       language: 'language',
-      theme: 'theme',
+      theme: 'Toggle dark theme',
+      navigation: 'Main navigation',
+      skip: 'Skip to content',
     },
     nav: {
       home: 'home',
@@ -15,26 +17,36 @@ const translations = {
       about: 'about',
     },
     hero: {
-      greeting: 'hi,',
+      location: 'Teresina, Brazil / Remote',
+      greeting: 'Hi, I’m Lucas.',
+      role: 'Staff Software Engineer. Product builder.',
+      intro: '10+ years turning complex problems into web and mobile products. Currently at Bold.org, working remotely from Brazil.',
+      selected: 'Selected work',
+      selectedNote: 'Things I build, explore and keep improving.',
+      personal: 'Away from the keyboard: two kids, Math Academy and a guitar. Still treating PostgreSQL as a personality trait.',
       nowLabel: 'Now',
-      now: 'Shipping Aluga (private beta) after wrapping the DriftPosts move to Cloudflare.',
-      columnOne: [
-        "I'm a full-stack engineer who treats PostgreSQL like a personality trait and prefers code I won't have to write twice.",
-        '10+ years shipping web products. Currently at Bold.org, fighting student debt one React component at a time.',
-      ],
-      columnTwo: [
-        "More terminal than IDE. These days I orchestrate AI agents so I can stay focused on the work that actually matters.",
-        "Outside the editor: two kids, a few side projects, math studies on Math Academy, and learning guitar — a healthy allergy to free time.",
-      ],
+      now: 'Building DriftPosts and Decorebator MCP.',
       primaryCta: 'View projects',
       secondaryCta: 'About me',
       tertiaryCta: 'GitHub',
     },
     projects: {
       title: 'projects',
-      subtitle: 'A mix of shipped products, side experiments, and work-in-progress.',
+      subtitle: 'From an idea to something you can use. A selection of my independent work.',
+      live: 'Available now',
+      building: 'In development',
+      archive: 'From the archive',
+      archiveNote: 'Retired products, preserved through their code.',
+      details: 'Technical details',
+      proposed: 'Scope & architecture',
+      view: 'Explore project',
+      source: 'Source code',
+      preview: 'Proposed learning flow',
+      flow: ['Save words', 'Practice in chat', 'Review over time'],
+      screenshot: 'DriftPosts homepage with a travel story and destination discovery',
+      stackLabels: { Frontend: 'Frontend', Backend: 'Backend', Mobile: 'Mobile', Services: 'Services', Core: 'Core', MCP: 'MCP', 'AI & data': 'AI & data' },
       ctas: {
-        website: 'Website',
+        website: 'Visit site',
         playStore: 'Play Store',
         appStore: 'App Store',
       },
@@ -42,6 +54,7 @@ const translations = {
         completed: 'shipped',
         'in-progress': 'in progress',
         planned: 'planned',
+        retired: 'retired',
       },
     },
     about: {
@@ -49,7 +62,7 @@ const translations = {
       currentlyHeading: 'Currently',
       currently: [
         'Staff Software Engineer at Bold.org.',
-        'Shipping Aluga (private beta) and migrating DriftPosts to Cloudflare.',
+        'Building DriftPosts and Decorebator MCP.',
         'Studying math on Math Academy and learning guitar in the in-between.',
       ],
       toolsHeading: 'Daily toolkit',
@@ -83,25 +96,6 @@ const translations = {
         url: 'https://bold.org',
         after: ", where we use AWS, Node.js, and React to fight student debt at a platform serving hundreds of thousands of users daily. Before Bold I worked on AI-powered engineering marketplaces at Turing and performance platforms at Indeva by VTEX.",
       },
-      techHeading: 'Tools I actually reach for',
-      techSections: [
-        {
-          title: 'Frontend',
-          body: "React and Next.js for product surfaces, TypeScript everywhere, Vitest/Jest to keep regressions honest.",
-        },
-        {
-          title: 'Backend',
-          body: "Started with Java, grew up on Node.js, and these days I lean on Go for performance-sensitive services. PostgreSQL for data, Redis for cache and queues.",
-        },
-        {
-          title: 'Cloud & ops',
-          body: "AWS is home base, with detours into GCP. Docker for everything, Terraform when infra needs to live in code, Datadog and Sentry to know what's actually happening.",
-        },
-        {
-          title: 'AI',
-          body: "Spending a lot of time on agent workflows lately — building copilots that plug into existing stacks instead of replacing them.",
-        },
-      ],
       experienceHeading: 'Experience',
       experiences: [
         {
@@ -109,7 +103,7 @@ const translations = {
           company: 'Bold.org',
           companyUrl: 'https://bold.org',
           timeline: 'Mar 2021 — Present',
-          description: 'Building the scholarship platform that fights student debt for hundreds of thousands of users. AWS, Node.js, Express, PostgreSQL, React — fully remote.',
+          description: 'Building the scholarship platform that fights student debt for hundreds of thousands of users. Full-stack engineering across the web platform.',
         },
         {
           role: 'Senior Software Engineer',
@@ -139,7 +133,9 @@ const translations = {
   'pt-BR': {
     preferences: {
       language: 'idioma',
-      theme: 'tema',
+      theme: 'Alternar tema escuro',
+      navigation: 'Navegação principal',
+      skip: 'Pular para o conteúdo',
     },
     nav: {
       home: 'início',
@@ -147,26 +143,36 @@ const translations = {
       about: 'sobre',
     },
     hero: {
-      greeting: 'oi,',
+      location: 'Teresina, Brasil / Remoto',
+      greeting: 'Oi, sou Lucas.',
+      role: 'Staff Software Engineer. Criador de produtos.',
+      intro: 'Há mais de 10 anos transformando problemas complexos em produtos web e mobile. Hoje na Bold.org, trabalhando remotamente do Brasil.',
+      selected: 'Projetos selecionados',
+      selectedNote: 'Coisas que construo, exploro e continuo melhorando.',
+      personal: 'Fora do teclado: dois filhos, Math Academy e um violão. Ainda tratando PostgreSQL como traço de personalidade.',
       nowLabel: 'Agora',
-      now: 'Lançando o Aluga (beta fechado) depois de fechar a migração do DriftPosts para Cloudflare.',
-      columnOne: [
-        'Sou engenheiro full-stack que trata PostgreSQL como traço de personalidade e prefere código que não precisa escrever duas vezes.',
-        'Há mais de 10 anos entregando produtos web. Atualmente na Bold.org, combatendo a dívida estudantil um componente React por vez.',
-      ],
-      columnTwo: [
-        'Sou mais de terminal do que de IDE. Hoje oriento agentes de IA para manter o foco no que realmente importa.',
-        'Fora do editor: dois filhos, alguns projetos paralelos, estudos de matemática no Math Academy e aprendendo violão — uma alergia saudável a tempo livre.',
-      ],
+      now: 'Desenvolvendo DriftPosts e Decorebator MCP.',
       primaryCta: 'Ver projetos',
       secondaryCta: 'Sobre mim',
       tertiaryCta: 'GitHub',
     },
     projects: {
       title: 'projetos',
-      subtitle: 'Uma mistura de produtos lançados, experimentos paralelos e trabalhos em andamento.',
+      subtitle: 'Da ideia a algo que você pode usar. Uma seleção dos meus projetos independentes.',
+      live: 'Disponíveis',
+      building: 'Em desenvolvimento',
+      archive: 'Do arquivo',
+      archiveNote: 'Produtos encerrados, preservados pelo código.',
+      details: 'Detalhes técnicos',
+      proposed: 'Escopo e arquitetura',
+      view: 'Conhecer projeto',
+      source: 'Código-fonte',
+      preview: 'Fluxo de aprendizado proposto',
+      flow: ['Salvar palavras', 'Praticar no chat', 'Revisar com o tempo'],
+      screenshot: 'Página inicial do DriftPosts com uma história de viagem e descoberta de destinos',
+      stackLabels: { Frontend: 'Frontend', Backend: 'Backend', Mobile: 'Mobile', Services: 'Serviços', Core: 'Núcleo', MCP: 'MCP', 'AI & data': 'IA e dados' },
       ctas: {
-        website: 'Website',
+        website: 'Visitar site',
         playStore: 'Play Store',
         appStore: 'App Store',
       },
@@ -174,6 +180,7 @@ const translations = {
         completed: 'lançado',
         'in-progress': 'em andamento',
         planned: 'planejado',
+        retired: 'encerrado',
       },
     },
     about: {
@@ -181,7 +188,7 @@ const translations = {
       currentlyHeading: 'Agora',
       currently: [
         'Staff Software Engineer na Bold.org.',
-        'Lançando o Aluga (beta fechado) e tocando os próximos passos do DriftPosts já 100% em Cloudflare.',
+        'Desenvolvendo DriftPosts e Decorebator MCP.',
         'Estudando matemática no Math Academy e aprendendo violão nas horas vagas.',
       ],
       toolsHeading: 'Stack do dia a dia',
@@ -215,25 +222,6 @@ const translations = {
         url: 'https://bold.org',
         after: ', onde usamos AWS, Node.js e React para combater a dívida estudantil em uma plataforma que atende centenas de milhares de usuários diariamente. Antes da Bold, trabalhei em marketplaces de engenharia com IA na Turing e em plataformas de performance na Indeva by VTEX.',
       },
-      techHeading: 'Ferramentas que realmente uso',
-      techSections: [
-        {
-          title: 'Frontend',
-          body: 'React e Next.js para superfícies de produto, TypeScript em todo lugar e Vitest/Jest para evitar regressões.',
-        },
-        {
-          title: 'Backend',
-          body: 'Comecei com Java, cresci no Node.js e hoje uso bastante Go para serviços performáticos. PostgreSQL para dados, Redis para cache e filas.',
-        },
-        {
-          title: 'Cloud e operações',
-          body: 'AWS é a base, com passagens por GCP. Docker para tudo, Terraform quando a infra precisa virar código, Datadog e Sentry para enxergar o que está acontecendo.',
-        },
-        {
-          title: 'IA',
-          body: 'Tenho focado em workflows de agentes — copilotos que se integram ao stack existente em vez de substituí-lo.',
-        },
-      ],
       experienceHeading: 'Experiência',
       experiences: [
         {
@@ -241,7 +229,7 @@ const translations = {
           company: 'Bold.org',
           companyUrl: 'https://bold.org',
           timeline: 'Mar 2021 — Atual',
-          description: 'Construindo a plataforma de bolsas que combate a dívida estudantil para centenas de milhares de usuários. AWS, Node.js, Express, PostgreSQL e React, 100% remoto.',
+          description: 'Construindo a plataforma de bolsas que combate a dívida estudantil para centenas de milhares de usuários. Engenharia full-stack na plataforma web.',
         },
         {
           role: 'Senior Software Engineer',

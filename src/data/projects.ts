@@ -1,80 +1,76 @@
 import { Language } from '@/lib/i18n'
 
 export interface Project {
+  id: string
   title: string
   description: Record<Language, string>
+  details?: Record<Language, string>
   technologies: string[]
   link?: string
   github?: string
   playStore?: string
   appStore?: string
   icon?: string
-  status: 'completed' | 'in-progress' | 'planned'
+  status: 'completed' | 'in-progress' | 'planned' | 'retired'
   stack: { label: string; value: string }[]
 }
 
 export const projects: Project[] = [
   {
-    title: 'Aluga',
+    id: 'decorebator-mcp',
+    title: 'Decorebator MCP',
     description: {
-      en: 'Rental management for small landlords in Brazil — track tenants, leases, payments, and overdue rents from your phone. Currently in private beta, shipping soon.',
-      'pt-BR': 'Gestão de aluguéis para pequenos proprietários no Brasil — acompanhe inquilinos, contratos, pagamentos e atrasos pelo celular. Em beta fechado, lançamento em breve.',
+      en: 'Vocabulary practice inside ChatGPT, with exercises and progress across conversations. A new tutor in development, built around a remote MCP server.',
+      'pt-BR': 'Vocabulário no ChatGPT, com exercícios e progresso entre conversas. Um novo tutor em desenvolvimento, conectado por um servidor MCP remoto.',
     },
-    technologies: ['Expo', 'React Native', 'Cloudflare Workers', 'Hono', 'D1', 'Drizzle', 'Clerk', 'TanStack Query'],
+    details: {
+      en: 'The scope includes shared progress across lists, varied exercises and persistent learning history. FSRS is proposed for scheduling reviews by skill, initially for personal use.',
+      'pt-BR': 'O escopo inclui progresso compartilhado entre listas, exercícios variados e histórico persistente. A proposta usa FSRS para agendar revisões por habilidade, inicialmente para uso pessoal.',
+    },
+    technologies: ['MCP', 'TypeScript', 'Cloudflare', 'FSRS'],
+    link: 'https://decorebator.com',
     status: 'in-progress',
     stack: [
-      { label: 'Mobile', value: 'Expo 55, React Native, Expo Router, TanStack Query, Clerk' },
-      { label: 'Backend', value: 'Cloudflare Workers, Hono, Drizzle ORM, D1 (SQLite at the edge)' },
-      { label: 'Services', value: 'Clerk auth, Sentry, Expo IAP, Apple/Google Sign-in' },
+      { label: 'MCP', value: 'ChatGPT, Streamable HTTP, OAuth' },
+      { label: 'Backend', value: 'TypeScript, Cloudflare Workers, D1' },
+      { label: 'Core', value: 'FSRS, pnpm workspaces, Vitest' },
     ],
   },
   {
+    id: 'driftposts',
     title: 'DriftPosts',
     description: {
-      en: 'AI-powered travel content platform that publishes multilingual blog posts at scale, with SEO-optimized structure and rich image enrichment. Fully automated content pipeline — ingestion, generation, translation, and publishing. Originally ran on a Hetzner VPS with Coolify and Supabase; recently re-platformed end-to-end onto Cloudflare (Workers, D1, R2, Containers) for global edge delivery and lower ops overhead.',
-      'pt-BR': 'Plataforma de conteúdo de viagem com IA que publica posts multilíngues em escala, com estrutura otimizada para SEO e enriquecimento de imagens. Pipeline totalmente automatizado — da ingestão à publicação. Originalmente rodava em VPS na Hetzner com Coolify e Supabase; recentemente migrei toda a stack para Cloudflare (Workers, D1, R2, Containers) para entrega global no edge e menor sobrecarga operacional.',
+      en: 'Discover places through multilingual travel stories and an interactive map. An AI content pipeline connects video sources, destinations and travel guides.',
+      'pt-BR': 'Descubra lugares por histórias de viagem em vários idiomas e um mapa interativo. Um pipeline de IA conecta vídeos, destinos e guias de viagem.',
     },
-    technologies: ['Astro', 'React', 'TypeScript', 'Cloudflare Workers', 'Hono', 'D1', 'R2', 'Vercel AI SDK', 'OpenAI', 'Anthropic'],
+    details: {
+      en: 'Astro and React on Vercel serve the public site. Cloudflare Workers, D1, R2, Queues and Containers power the backend, from ingestion and translation to publishing.',
+      'pt-BR': 'Astro e React na Vercel servem o site público. Cloudflare Workers, D1, R2, Queues e Containers sustentam o backend, da ingestão e tradução à publicação.',
+    },
+    technologies: ['Astro', 'React', 'Cloudflare', 'AI SDK'],
     link: 'https://driftposts.com',
     status: 'completed',
     stack: [
-      { label: 'Frontend', value: 'Astro + React islands, Astro Content Layer, TypeScript' },
+      { label: 'Frontend', value: 'Astro, React, TypeScript, Vercel' },
       { label: 'Backend', value: 'Cloudflare Workers + Hono, D1 (SQLite), R2 (object storage), Cloudflare Containers' },
       { label: 'AI & data', value: 'Vercel AI SDK, OpenAI, Anthropic, Google Places' },
     ],
   },
   {
+    id: 'decorebator',
     title: 'Decorebator',
     description: {
-      en: 'AI-powered vocabulary app combining advanced LLMs with the Leitner spaced repetition system. AI-generated definitions, images, and audio across 7 languages, 8 quiz modes, and full analytics.',
-      'pt-BR': 'App de vocabulário com IA que combina LLMs avançados com o sistema Leitner de repetição espaçada. Definições, imagens e áudios em 7 idiomas, 8 modos de quiz e análises completas.',
+      en: 'The original vocabulary app: AI content and spaced repetition in 7 languages. Retired, with public source code preserving its history.',
+      'pt-BR': 'O app original de vocabulário: conteúdo com IA e repetição espaçada em 7 idiomas. Encerrado, com código público preservando sua história.',
     },
     technologies: ['Go', 'React Native', 'Next.js', 'PostgreSQL', 'OpenAI API', 'Stripe', 'RevenueCat', 'Redis', 'Docker'],
-    link: 'https://decorebator.com',
-    playStore: 'https://play.google.com/store/apps/details?id=com.lsimaocosta.decorebator',
-    appStore: 'https://apps.apple.com/app/decorebator/id6749329064',
+    github: 'https://github.com/lucassimao/decorebator.com',
     icon: '/decorebator-icon.png',
-    status: 'completed',
+    status: 'retired',
     stack: [
       { label: 'Backend', value: 'Go with Gin, PostgreSQL (pgx/v5), River queue system' },
       { label: 'Mobile', value: 'Expo, React Hook Form + Zod, TanStack Query, i18next, RevenueCat, PostHog' },
       { label: 'Services', value: 'DigitalOcean, OpenAI, Stripe, RevenueCat, SendGrid, Redis, MinIO, Sentry, Datadog' },
-    ],
-  },
-  {
-    title: 'Calculadora Price & SAC',
-    description: {
-      en: 'A focused Brazilian-market mobile app for amortization tables — compare Price and SAC systems for any loan, export schedules, and run scenarios offline.',
-      'pt-BR': 'App mobile focado no mercado brasileiro para tabelas de amortização — compare os sistemas Price e SAC, exporte cronogramas e simule cenários offline.',
-    },
-    technologies: ['Expo', 'React Native', 'Next.js', 'TypeScript', 'EAS'],
-    link: 'https://www.calculadorapricesac.com.br/',
-    appStore: 'https://apps.apple.com/app/calculadora-sac-price/id6757717537',
-    status: 'completed',
-    stack: [
-      { label: 'Mobile', value: 'Expo 54, React Native, Expo Router, expo-iap, Sentry' },
-      { label: 'Marketing', value: 'Next.js, TypeScript, Vercel Analytics' },
-      { label: 'Distribution', value: 'EAS Build, EAS Update, Google Play, Maestro UI tests' },
     ],
   },
 ]

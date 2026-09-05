@@ -38,7 +38,7 @@ export function Footer() {
   const t = useTranslations()
 
   return (
-    <footer className="mt-20 py-10 border-t border-border/60">
+    <footer className="mt-12 py-8 border-t border-border/60">
       <div className="shell flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-muted">
           © {new Date().getFullYear()} {t.footer.builtWith}
@@ -51,7 +51,7 @@ export function Footer() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-foreground transition-colors"
+              className="inline-flex min-h-10 min-w-10 items-center justify-center text-muted hover:text-foreground transition-colors"
               aria-label={label}
             >
               <SocialIcon icon={icon} />

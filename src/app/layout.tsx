@@ -111,7 +111,7 @@ export default async function RootLayout({
         <LanguageProvider initialLanguage={language}>
           <ThemeProvider>
             <Header />
-            <main>{children}</main>
+            <main id="main-content" tabIndex={-1}>{children}</main>
             <Footer />
             <Analytics />
           </ThemeProvider>
