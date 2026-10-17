@@ -1,5 +1,6 @@
 "use client"
 
+import { usePathname } from 'next/navigation'
 import { useTranslations } from '../language/LanguageProvider'
 
 const socialLinks = [
@@ -36,6 +37,9 @@ function SocialIcon({ icon }: { icon: IconName }) {
 
 export function Footer() {
   const t = useTranslations()
+  const pathname = usePathname()
+
+  if (pathname === '/') return null
 
   return (
     <footer className="mt-12 py-8 border-t border-border/60">

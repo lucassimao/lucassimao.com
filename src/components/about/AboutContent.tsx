@@ -29,37 +29,6 @@ export function AboutContent() {
       </div>
 
       <section className="mt-14">
-        <h2 className="text-xl font-semibold mb-6">{about.experienceHeading}</h2>
-        <div className="space-y-7">
-          {about.experiences.map((experience) => {
-            const hasCompanyUrl = 'companyUrl' in experience && Boolean(experience.companyUrl)
-            return (
-              <div key={experience.role + experience.company} className="border-l-2 border-color pl-5">
-                <h3 className="text-lg font-semibold text-foreground leading-snug">
-                  {experience.role}
-                  {' · '}
-                  {hasCompanyUrl ? (
-                    <a
-                      href={experience.companyUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-link hover:underline"
-                    >
-                      {experience.company}
-                    </a>
-                  ) : (
-                    experience.company
-                  )}
-                </h3>
-                <p className="text-xs text-muted mt-1 mb-2 uppercase tracking-wide">{experience.timeline}</p>
-                <p className="text-foreground-secondary leading-relaxed">{experience.description}</p>
-              </div>
-            )
-          })}
-        </div>
-      </section>
-
-      <section className="mt-14">
         <h2 className="text-xl font-semibold mb-5">
           {about.currentlyHeading}
         </h2>

@@ -96,28 +96,6 @@ const translations = {
         url: 'https://bold.org',
         after: ", where we use AWS, Node.js, and React to fight student debt at a platform serving hundreds of thousands of users daily. Before Bold I worked on AI-powered engineering marketplaces at Turing and performance platforms at Indeva by VTEX.",
       },
-      experienceHeading: 'Experience',
-      experiences: [
-        {
-          role: 'Staff Software Engineer',
-          company: 'Bold.org',
-          companyUrl: 'https://bold.org',
-          timeline: 'Mar 2021 — Present',
-          description: 'Building the scholarship platform that fights student debt for hundreds of thousands of users. Full-stack engineering across the web platform.',
-        },
-        {
-          role: 'Senior Software Engineer',
-          company: 'Turing',
-          timeline: 'Jul 2020 — Mar 2021',
-          description: 'AI-powered talent marketplace matching pre-vetted engineers with Silicon Valley companies. Google Cloud, Node.js, NestJS, React.',
-        },
-        {
-          role: 'Software Engineer',
-          company: 'Indeva by VTEX',
-          timeline: 'Feb 2019 — Jul 2020',
-          description: 'Performance management SaaS for retail. Node.js, Ruby on Rails, React, GraphQL, PostgreSQL.',
-        },
-      ],
       connectHeading: 'Get in touch',
       connectDescription: "Always up for chatting about engineering, products, or interesting collaborations.",
       contactLinks: {
@@ -222,28 +200,6 @@ const translations = {
         url: 'https://bold.org',
         after: ', onde usamos AWS, Node.js e React para combater a dívida estudantil em uma plataforma que atende centenas de milhares de usuários diariamente. Antes da Bold, trabalhei em marketplaces de engenharia com IA na Turing e em plataformas de performance na Indeva by VTEX.',
       },
-      experienceHeading: 'Experiência',
-      experiences: [
-        {
-          role: 'Staff Software Engineer',
-          company: 'Bold.org',
-          companyUrl: 'https://bold.org',
-          timeline: 'Mar 2021 — Atual',
-          description: 'Construindo a plataforma de bolsas que combate a dívida estudantil para centenas de milhares de usuários. Engenharia full-stack na plataforma web.',
-        },
-        {
-          role: 'Senior Software Engineer',
-          company: 'Turing',
-          timeline: 'Jul 2020 — Mar 2021',
-          description: 'Marketplace de talentos com IA conectando engenheiros pré-selecionados a empresas do Vale do Silício. Google Cloud, Node.js, NestJS, React.',
-        },
-        {
-          role: 'Software Engineer',
-          company: 'Indeva by VTEX',
-          timeline: 'Fev 2019 — Jul 2020',
-          description: 'SaaS de gestão de performance para o varejo. Node.js, Ruby on Rails, React, GraphQL e PostgreSQL.',
-        },
-      ],
       connectHeading: 'Vamos conversar',
       connectDescription: 'Sempre aberto para conversar sobre engenharia, produtos ou colaborações interessantes.',
       contactLinks: {

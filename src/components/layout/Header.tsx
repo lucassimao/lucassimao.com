@@ -11,6 +11,8 @@ export function Header() {
   const t = useTranslations()
   const navItems = [{ href: '/', label: t.nav.home }, { href: '/projects', label: t.nav.projects }, { href: '/about', label: t.nav.about }]
 
+  if (pathname === '/') return null
+
   return (
     <>
       <a className="skip-link" href="#main-content">{t.preferences.skip}</a>
